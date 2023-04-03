@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,30 @@
     <title>Example1</title>
 </head>
 <style>
-    #btn-click{
+    body{
+        background-color: black
+    }
+    .container {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100vh;
     }
+    button{
+        background-color: white;
+        color: black;
+        padding: 10px 20px;
+        margin: 10px;
+        border-radius: 5px solid white;
+        font-size: 20px;
+    }
 </style>
 
 <body>
-    <div id="btn-click">
-        Click Me 
+    <div class="container">
+
+        <button id="btn-click-Add">ADD</button>
+        <button id="btn-click-Sub">SUB</button>
     </div>
     <script>
         //creating a variable to store a value
@@ -27,14 +41,19 @@
             counter++
             console.log(counter)
         }
+
+        function decrement(){
+            counter--
+            console.log(counter)
+        }
         //get the button element
-        let btn = document.getElementById('btn-click')
+        let Add = document.getElementById('btn-click-Add')
+        let Sub = document.getElementById('btn-click-Sub')
         // const btn =document.querySelector("#btn-click")
         //bind the click event to the button 
-        btn.addEventListener('click', increment,false)
-       
-
-
+        Add.addEventListener('click', increment, false)
+        Sub.addEventListener('click', decrement, false)
     </script>
 </body>
+
 </html>
