@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example1</title>
+</head>
+<style>
+    #btn-click{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+</style>
+
+<body>
+    <div id="btn-click">
+        Click Me 
+    </div>
+    <script>
+        //creating a variable to store a value
+        let counter = 0
+        //creating a function to increment the value
+        function increment() {
+            counter++
+            console.log(counter)
+        }
+        //get the button element
+        let btn = document.getElementById('btn-click')
+        // const btn =document.querySelector("#btn-click")
+        //bind the click event to the button 
+        btn.addEventListener('click', increment,false)
+       
+
+
+    </script>
+</body>
+</html>
