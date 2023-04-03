@@ -9,6 +9,7 @@
 <style>
     body{
         background-color: black
+        
     }
     .container {
         display: flex;
@@ -24,8 +25,24 @@
         border-radius: 5px solid white;
         font-size: 20px;
     }
+    h1{
+        font-size: 30px;
+        color: black;
+    }
+    .card{
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+    }
 </style>
 <body>
+    <div class="card">
+        <h1 id="card-item"></h1>
+        <h1 id="always">Last Expenses</h1>
+    </div>
     <div class="container">
         <input type="text" id="inputNumber">
         <button id="button" >Add</button>
@@ -33,12 +50,15 @@
 
     <script>
         let totalExpenses = 0
+        const card = document.getElementById('card-item')
+        const always = document.getElementById('always')
         function addExpenses(){
             const Number = document.getElementById('inputNumber')
-            const value = Number.value
-            totalExpenses += parseInt(Number.value)
-            console.log(totalExpenses)
+            const value = parseInt(Number.value)
+            totalExpenses += value
+            always.textContent = `Last Expenses: ${value}`
             Number.value = ''
+            card.innerHTML = `Total Expenses: ${totalExpenses}`
         }
         const btn = document.getElementById('button')
         btn.addEventListener('click', addExpenses)
