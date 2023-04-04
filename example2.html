@@ -52,8 +52,8 @@
         let totalExpenses = 0
         const card = document.getElementById('card-item')
         const always = document.getElementById('always')
+        const Number = document.getElementById('inputNumber')
         function addExpenses(){
-            const Number = document.getElementById('inputNumber')
             const value = parseInt(Number.value)
             totalExpenses += value
             always.textContent = `Last Expenses: ${value}`
